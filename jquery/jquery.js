@@ -14,6 +14,7 @@ $(document).ready(function() {
     var $window = $(window),
         /*$displaymenu = $('#displaymenu'),
         $navigation = $('#navigation'),*/
+        $all_target_blank = $('[target="_blank"],[target="blank"]'),
         hash = window.location.hash.replace("#", ""),
         $body = $('body'),
         on_mobile = false,
@@ -215,6 +216,9 @@ $(document).ready(function() {
         $blocks_2hide.addClass('hidden');
 
     });
+    
+    // security for target blank
+    $all_target_blank.attr('rel', 'noopener noreferrer');
 
 
 });
