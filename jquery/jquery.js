@@ -219,6 +219,21 @@ $(document).ready(function() {
     
     // security for target blank
     $all_target_blank.attr('rel', 'noopener noreferrer');
+    
+   // link for internal scroll
+   $body.on('click', '.js-scroll-button', function() {
+       var $this = $(this);
+       var id_to_scroll = $this.attr('href'),
+           $header = $('.js-header__nav'),
+           height_header = $header.height();
+       if (id_to_scroll != '' && $(id_to_scroll).length) {
+           $("html, body").animate({
+               scrollTop: $(id_to_scroll).offset().top - height_header
+           }, 250);
+           $window.location.hash = id_to_scroll;
+           return false;
+       }
+   });
 
 
 });
