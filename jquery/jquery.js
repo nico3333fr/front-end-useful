@@ -18,6 +18,7 @@ $(document).ready(function() {
         hash = window.location.hash.replace("#", ""),
         $body = $('body'),
         on_mobile = false,
+        // breakpoint = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/['"]+/g, ''),
         resizeTimer,
         lazyloadTimer,
         resizeTimer; // Set resizeTimer to empty so it resets on page load;
